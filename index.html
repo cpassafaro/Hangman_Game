@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to Hangman</h1>
+    <div class = 'hangman-main-container'>
+        
+        <div class = 'hangman-image-container'>
+            <img src = 'images/Hangman platform.jpeg' class = "noose"/>
+            <div class = "hangman-body">
+                <div class = "head">O</div>
+                <div class = "body">|</div>
+                <div class = "body2">|</div>
+                <div class = "left-arm">j</div>
+                <div class = "right-arm">j</div>
+                <div class = "left-leg">|</div>
+                <div class = "right-leg">|</div>
+            </div>
+        </div>
+    </div>
+    <div class = "word-container">
+        <div class = "discarded-letters">
+            <ul id ='discarded-box'>
+                <li class = "l1r"></li>
+                <li class = "l2r"></li>
+                <li class = "l3r"></li>
+                <li class = "l4r"></li>
+                <li class = "l5r"></li>
+                <li class = "l6r"></li>
+                <li class = "l7r"></li>
+            </ul>
+        </div>
+        <div class = "word-area">
+            <ul>
+                <li class = 'l1a'></li>
+                <li class = 'l2a'></li>
+                <li class = 'l3a'></li>
+                <li class = 'l4a'></li>
+                <li class = 'l5a'></li>
+                <li class = 'l6a'></li>
+                <li class = 'l7a'></li>
+                <li class = 'l8a'></li>
+            </ul>
+        </div>
+    </div>
+    <div class ='input'>
+         <input type='text' class = "input-value" placeholder="Enter Letter Here" maxlength="1">
+         <button class = "submit">Submit</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
