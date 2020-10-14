@@ -18,6 +18,7 @@ submitButton.addEventListener('click', ()=>{
     getInput()
     // letterRejected()
     takeWordBank()
+    input.focus()
     return input.value = ""
 })
 
@@ -37,7 +38,6 @@ function letterRejected(){
     }else{
         for(let i = 0; i<discardedLettersArea.length; i++){
             if(discardedLettersArea[i].textContent == ""){
-                counter ++
                 discardedLettersArea[i].textContent = letterInput;
                 counter ++
                 break
@@ -54,15 +54,21 @@ function letterRejected(){
 //create function that populates the wordBank into the 
 function takeWordBank(){
     let letterGuessed = getInput()
+    let thisCounter = 0;
     for(let i =0; i<correctWord.length; i++){
         if(letterGuessed == correctWord[i].textContent){
             correctWord[i].style.display = 'flex'
-            break
         }
+        else{
+            thisCounter ++
+        }
+
     }
-    letterRejected()
+    // console.log(counter)
+    if(thisCounter >7){
+        letterRejected()
     }
-// }
+}
 
 function upperCaseF(a){
     setTimeout(function(){
