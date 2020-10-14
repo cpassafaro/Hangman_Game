@@ -11,15 +11,15 @@
     <div class = 'hangman-main-container'>
         
         <div class = 'hangman-image-container'>
-            <img src = 'images/Hangman platform.jpeg' class = "noose"/>
+            <img src = 'images/Transparent Platform Background.png' class = "noose"/>
             <div class = "hangman-body">
-                <div class = "head">O</div>
-                <div class = "body">|</div>
-                <div class = "body2">|</div>
-                <div class = "left-arm">j</div>
-                <div class = "right-arm">j</div>
-                <div class = "left-leg">|</div>
-                <div class = "right-leg">|</div>
+                <div class = "head hm">O</div>
+                <div class = "body hm">|</div>
+                <div class = "body2 hm">|</div>
+                <div class = "left-arm hm">j</div>
+                <div class = "right-arm hm">j</div>
+                <div class = "left-leg hm">|</div>
+                <div class = "right-leg hm">|</div>
             </div>
         </div>
     </div>
@@ -37,21 +37,26 @@
         </div>
         <div class = "word-area">
             <ul class ="correct-word">
-                <li class = 'la'>F</li>
-                <li class = 'la'>L</li>
-                <li class = 'la'>A</li>
-                <li class = 'la'>P</li>
-                <li class = 'la'>J</li>
-                <li class = 'la'>A</li>
-                <li class = 'la'>C</li>
-                <li class = 'la'>K</li>
+                <li class = 'la'></li>
+                <li class = 'la'></li>
+                <li class = 'la'></li>
+                <li class = 'la'></li>
+                <li class = 'la'></li>
+                <li class = 'la'></li>
+                <li class = 'la'></li>
+                <li class = 'la'></li>
             </ul>
         </div>
     </div>
-    <div class ='input'>
+    <form class ='input'>
          <input type='text' class = "input-value" placeholder="Enter Letter Here"  onkeydown="upperCaseF(this)" maxlength="1">
-         <button class = "submit">Submit</button>
+         <button type= 'submit' class = "submit">Submit</button>
+    </form>
+    <div class = "new-game">
+        <button class = "new-game-button">New Game</button>
     </div>
+
+
 
     <script src="app.js"></script>
 </body>

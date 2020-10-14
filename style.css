@@ -6,6 +6,9 @@ html, body{
     /* background:gray; */
     margin:0;
     height:100%;
+    background-image: url('images/chalkboard-blue.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1{
@@ -13,18 +16,20 @@ h1{
     justify-content: center;
 
 }
+img{
+    height:400px;
+    position: relative;
+
+}
 
 .hangman-image-container{
     display:flex;
     justify-content: center;
     align-items: center;
-    padding-left:240px;
+    padding-left:0px;
 
 }
-.noose{
-    position: relative;
 
-}
 
 .hangman-body{
     display:flex;
@@ -33,23 +38,25 @@ h1{
     font-size:25px;
     font-family:Arial, Helvetica, sans-serif;
     position:absolute;
-    padding-right:90px;
-    padding-bottom:70px
+    padding-right:0px;
+    padding-bottom:60px
 }
 
 .head{
-
+    /* display:none; */
 }
 .body{
+    display:none;
     margin:-7px;
     padding:0px;
 }
 
 .body2{
-  
+  display:none;
 }
 
 .left-arm{
+    display:none;
     transform:rotate(200deg);
     padding-left:25px;
     margin-top:-35px;
@@ -57,18 +64,21 @@ h1{
 }
 
 .right-arm{
+    display:none;
     transform:rotate(160deg) scaleX(-1);
     padding-left:15px;
     margin-top:-31px;
 }
 
 .left-leg{
+    display:none;
     transform: rotate(20deg);
     padding-right:6px;
     margin-top:2px;
 }
 
 .right-leg{
+    display:none;
     transform: rotate(160deg);
     margin-top:-23px;
     padding-right:12px;
@@ -120,8 +130,19 @@ li{
 }
 
 .la{
-    display:none;
     border-bottom:1px solid black;
     padding-bottom: 20px;
+    color:#426A63;
 
+}
+
+.active{
+    display:flex;
+}
+
+.new-game{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:10px;
 }
