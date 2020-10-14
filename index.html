@@ -26,30 +26,30 @@
     <div class = "word-container">
         <div class = "discarded-letters">
             <ul id ='discarded-box'>
-                <li class = "l1r"></li>
-                <li class = "l2r"></li>
-                <li class = "l3r"></li>
-                <li class = "l4r"></li>
-                <li class = "l5r"></li>
-                <li class = "l6r"></li>
-                <li class = "l7r"></li>
+                <li class = "l1r lr"></li>
+                <li class = "l2r lr"></li>
+                <li class = "l3r lr"></li>
+                <li class = "l4r lr"></li>
+                <li class = "l5r lr"></li>
+                <li class = "l6r lr"></li>
+                <li class = "l7r lr"></li>
             </ul>
         </div>
         <div class = "word-area">
-            <ul>
-                <li class = 'l1a'></li>
-                <li class = 'l2a'></li>
-                <li class = 'l3a'></li>
-                <li class = 'l4a'></li>
-                <li class = 'l5a'></li>
-                <li class = 'l6a'></li>
-                <li class = 'l7a'></li>
-                <li class = 'l8a'></li>
+            <ul class ="correct-word">
+                <li class = 'la'>F</li>
+                <li class = 'la'>L</li>
+                <li class = 'la'>A</li>
+                <li class = 'la'>P</li>
+                <li class = 'la'>J</li>
+                <li class = 'la'>A</li>
+                <li class = 'la'>C</li>
+                <li class = 'la'>K</li>
             </ul>
         </div>
     </div>
     <div class ='input'>
-         <input type='text' class = "input-value" placeholder="Enter Letter Here" maxlength="1">
+         <input type='text' class = "input-value" placeholder="Enter Letter Here"  onkeydown="upperCaseF(this)" maxlength="1">
          <button class = "submit">Submit</button>
     </div>
 

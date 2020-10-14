@@ -100,7 +100,12 @@ ul{
     height:50px;
     width:300px;
     margin-left:-40px;
+    
 }
+.lr{
+    border: none;
+}
+
 li{
     border-bottom:1px solid black;
     height:10px;
@@ -112,4 +117,12 @@ li{
     display: flex;
     justify-content: center;
     align-items: center;
+    /* text-transform: uppercase; */
+}
+
+.la{
+    display:none;
+    border-bottom:1px solid black;
+    padding-bottom: 20px;
+
 }
