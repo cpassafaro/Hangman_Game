@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Chilanka&display=swap');
+
 *{
     box-sizing: border-box;
 }
@@ -9,6 +11,8 @@ html, body{
     background-image: url('images/chalkboard-blue.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    color:white;
+    font-family: 'Chilanka', cursive;
 }
 
 h1{
@@ -38,12 +42,12 @@ img{
     font-size:25px;
     font-family:Arial, Helvetica, sans-serif;
     position:absolute;
-    padding-right:0px;
-    padding-bottom:60px
+    padding-left:130px;
+    padding-bottom:70px
 }
 
 .head{
-    /* display:none; */
+    display:none;
 }
 .body{
     display:none;

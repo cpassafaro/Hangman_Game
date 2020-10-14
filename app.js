@@ -53,7 +53,7 @@ function takeWordBank(){
     let thisCounter = 0;
     for(let i =0; i<correctWord.length; i++){
         if(letterGuessed == correctWord[i].textContent){
-            correctWord[i].style.color = 'black'
+            correctWord[i].style.color = 'white'
             correctWord[i].style.display = 'flex'
         }
         else{
