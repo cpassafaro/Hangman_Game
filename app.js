@@ -1,3 +1,5 @@
+
+
 //DOM selectors
 let input = document.querySelector('.input-value')
 let submitButton = document.querySelector('.submit')
@@ -28,14 +30,21 @@ submitButton.addEventListener('click', (e)=>{
 
 //create a function to get the input and capatalize input if not done
 function getInput(){
-    return input.value
+    if(input.value == ''){
+        
+        alert('Please Enter a Letter')
+        // break
+    }else{
+        return input.value
+    }
 }
 //create a function that is populating the rejected letter box
 function letterRejected(){
     let letterInput = getInput();
     //write a loop to see if there is already a letter in each spot and put it in next available spot
     if(counter > 6){
-         alert("game over")
+        console.log("game over")
+        gameInitialization()
     }else{
         for(let i = 0; i<discardedLettersArea.length; i++){
             if(discardedLettersArea[i].textContent == ""){
@@ -87,7 +96,9 @@ function upperCaseF(a){
 }
 
 function displayHangman(){
+    console.log('----')
     for(let i = 0; i <hangman.length; i++){
+        console.log(hangman[i].classList)
         if(!hangman[i].classList.contains('active')){
             hangman[i].classList.add('active')
             break
@@ -113,6 +124,10 @@ function getRandomWord(){
 
 //RUNS THE CODE TO GET THE GAME READY TO PLAY COULD PROBABLY BE USED AS A RESTART BUTTON
 function gameInitialization(){
+    //set array back to empty, so not pulling same thing that got pushed in on page refresh
+    randomWord = [];
+    clearHangman();
+    alert('clear')
     getRandomWord();
     createWords();
 }
@@ -120,7 +135,24 @@ gameInitialization()
 
 //event listener for new game
 newGame.addEventListener('click', () => {
-    //set array back to empty, so not pulling same thing that got pushed in on page refresh
-    randomWord = [];
     gameInitialization()
 })
+
+function clearHangman(){
+   hangman.forEach(element => {
+       console.log(element.classList)
+       element.classList.remove('active')
+       console.log(element.classList)
+
+   })
+}
+   
+   
+    // for(let i = 0; i <hangman.length; i++){
+    //     hangman[i].classList.remove('active')
+        // if(hangman[i].classList.contains('active')){
+            // hangman[i].classList.remove('active')
+        // }
+        // console.log(hangman[i].classList)
+    // }
+
