@@ -14,7 +14,7 @@ let currentLetter = '';
 
 
 //create the word that the person is guessing
-let wordBank = ['FLAPJACK', 'BEJEEZUS', 'FUZZIEST', 'JOYFULLY', 'ZUCCHINI']
+let wordBank = ['FLAPJACK', 'FUZZIEST', 'JOYFULLY', 'ZUCCHINI', 'CARJACKS', 'SIZZLERS', 'SNAZZIER', 'BACKFLIP', 'VOLUMIZE', 'GLOVEBOX', 'JAGGEDLY', 'QUICKEST', 'QUENCHED']
 //empty array that the getRandomWord function is going to push into
 let randomWord = []
 submitButton.addEventListener('click', (e)=>{
@@ -44,7 +44,7 @@ function getInput(){
 function letterRejected(){
     //write a loop to see if there is already a letter in each spot and put it in next available spot
     if(counter > 6){
-        alert("game over")
+        alert("GAME OVER.")
         location.reload()
     }else{
         for(let i = 0; i<discardedLettersArea.length; i++){
@@ -89,7 +89,7 @@ function checkForWinner(){
         }
     })
     if(winnerCounter > 7){
-        alert('You Win')
+        alert('YOU WIN! PRESS NEW GAME TO PLAY AGAIN!')
         // location.reload()
     }
 }
@@ -133,7 +133,7 @@ function gameInitialization(){
     getRandomWord();
     createWords();
 }
-//gets the game going the first time
+//gets the game going the first
 gameInitialization()
 
 //event listener for new game
@@ -142,6 +142,12 @@ newGame.addEventListener('click', () => {
     location.reload()
     gameInitialization()
 })
+
+
+
+
+
+
 
 //won't clear the first element in the array
 //tried a for each loop as well and won't clear bc the first element is being called one extra time from display hangman
@@ -157,4 +163,5 @@ newGame.addEventListener('click', () => {
 // }
    
    
+
 
