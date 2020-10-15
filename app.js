@@ -7,6 +7,12 @@ let discardedLettersArea = document.querySelectorAll('.lr')
 let correctWord = document.querySelectorAll('.la')
 let hangman = document.querySelectorAll('.hm')
 let newGame = document.querySelector('.new-game-button')
+let modal = document.querySelector('.modal')
+let modalBackground = document.querySelector('.modal-overlay')
+let exit = document.querySelector('.exit')
+let winningWord = document.querySelector('.winningWord')
+let winningModal = document.querySelector('#you-win')
+
 //counter for the rejected letters
 let counter =0;
 let lettersAlreadyGuessed = [];
@@ -44,8 +50,7 @@ function getInput(){
 function letterRejected(){
     //write a loop to see if there is already a letter in each spot and put it in next available spot
     if(counter > 6){
-        alert("GAME OVER.")
-        location.reload()
+        displayLosingModal()
     }else{
         for(let i = 0; i<discardedLettersArea.length; i++){
             if(discardedLettersArea[i].textContent == ""){
@@ -89,8 +94,8 @@ function checkForWinner(){
         }
     })
     if(winnerCounter > 7){
-        alert('YOU WIN! PRESS NEW GAME TO PLAY AGAIN!')
-        // location.reload()
+        // alert('YOU WIN! PRESS NEW GAME TO PLAY AGAIN!')
+        displayWinningModal()
     }
 }
 
@@ -144,7 +149,28 @@ newGame.addEventListener('click', () => {
 })
 
 
+function displayLosingModal(){
+    modal.style.display = 'flex';
+    modalBackground.style.display = 'flex'
+    winningWord.textContent = randomWord
+}
 
+
+//exit functionality
+exit.addEventListener('click', () =>{
+    goAwayModal()
+    location.reload()
+})
+
+function goAwayModal(){
+    modalBackground.style.display = 'none'
+    modal.style.display = "none"
+}
+
+function displayWinningModal(){
+    winningModal.style.display = 'flex';
+    modalBackground.style.display = 'flex';
+}
 
 
 
@@ -160,8 +186,7 @@ newGame.addEventListener('click', () => {
 //        console.log(element.classList)
 
 //    })
-// }
-   
+// 
    
 
 

@@ -65,6 +65,10 @@
     from, to { border-color: transparent }
     50% { border-color: orange; }
   }
+@font-face{
+    font-family:chalk;
+    src:url('Fonts/DkCrayonCrumble-ddll.ttf')
+}
 
 html, body{
     margin:0;
@@ -73,15 +77,15 @@ html, body{
     background-repeat: no-repeat;
     background-size: cover;
     color:white;
-    font-family: 'Chilanka', cursive;
-    /* font-family: 'Fredericka the Great', cursive; */
-    /* font-family: 'Piedra', cursive; */
+    letter-spacing: 2px;;
+    font-family: chalk;
 }
 
 h1{
     display:flex;
     justify-content: center;
     margin-top:70px;
+    color:white;
     /* animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite; */
     animation: bounce 1.2s ease-in;
 }
@@ -230,4 +234,64 @@ li{
     padding: 10px 10px 10px 10px;
     background-color: black;
     color:white;
+}
+
+.modal {
+    /* margin:0; */
+    display:none;
+    position: fixed;
+    background-image: url('images/chalkboard-black.jpg');
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 200px;
+    max-height: 100%;
+    z-index: 1010;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+  }
+
+.modal-overlay{
+    display:none;
+    background-color: gray;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+}
+.modal-container{
+    margin:0;
+    position: absolute;
+    background-image: url('images/chalkboard-black.jpg');
+    /* top: 0; */
+    /* left: 0; */
+    max-width: 100%;
+    max-height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left:105px;
+
+}
+.exit{
+    background:none;
+    border:none;
+    float:right;
+    padding-top:4px;
+    font-weight: bold;
+    color: black;
+    background:white;
+}
+
+.you-lose{
+    color:#F4E633;
+    font-size: 30px;
+    margin-bottom:-13px;
+
 }
