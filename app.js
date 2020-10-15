@@ -12,6 +12,9 @@ let modalBackground = document.querySelector('.modal-overlay')
 let exit = document.querySelector('.exit')
 let winningWord = document.querySelector('.winningWord')
 let winningModal = document.querySelector('#you-win')
+let playAgain = document.querySelector('.play-again')
+let alreadyGuessedLetterModal = document.querySelector('.already-guessed')
+let tryAgain = document.querySelector('.try-again')
 
 //counter for the rejected letters
 let counter =0;
@@ -70,10 +73,11 @@ function takeWordBank(){
     let thisCounter = 0;
     for(let i =0; i<correctWord.length; i++){
         if(currentLetter == correctWord[i].textContent){
-            correctWord[i].style.color = 'white'
+            correctWord[i].style.color = '#FEF7AE'
             correctWord[i].style.display = 'flex'
         }else if(currentLetter == lettersAlreadyGuessed[i]){
-            alert('You already guessed that!')
+            // alert('You already guessed that!')
+            displayAlreadyGuessedModal()
         }
         else{
             thisCounter ++
@@ -162,6 +166,15 @@ exit.addEventListener('click', () =>{
     location.reload()
 })
 
+playAgain.addEventListener('click', () => {
+    goAwayModal()
+    location.reload()
+})
+tryAgain.addEventListener('click', () => {
+    alreadyGuessedLetterModal.style.display = 'none'
+
+})
+
 function goAwayModal(){
     modalBackground.style.display = 'none'
     modal.style.display = "none"
@@ -170,6 +183,9 @@ function goAwayModal(){
 function displayWinningModal(){
     winningModal.style.display = 'flex';
     modalBackground.style.display = 'flex';
+}
+function displayAlreadyGuessedModal(){
+    alreadyGuessedLetterModal.style.display = 'flex'
 }
 
 
