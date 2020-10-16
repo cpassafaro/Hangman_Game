@@ -37,6 +37,7 @@ let wordBank = ['FLAPJACK', 'FUZZIEST', 'JOYFULLY', 'ZUCCHINI', 'CARJACKS', 'SIZ
 
 //empty array that the getRandomWord function is going to push into
 let randomWord = []
+//event listener on submit button
 submitButton.addEventListener('click', (e)=>{
     e.preventDefault()
     getInput()
@@ -70,7 +71,7 @@ function letterRejected(){
     }else{
         for(let i = 0; i<discardedLettersArea.length; i++){
             if(discardedLettersArea[i].textContent == ""){
-                swishAudio.play()
+                rejectedAlarm.play()
                 discardedLettersArea[i].textContent = currentLetter;
                 lettersAlreadyGuessed.push(currentLetter)
                 counter ++
@@ -85,7 +86,7 @@ function takeWordBank(){
     let thisCounter = 0;
     for(let i =0; i<correctWord.length; i++){
         if(currentLetter == correctWord[i].textContent){
-            rejectedAlarm.play()
+            swishAudio.play()
             correctWord[i].style.color = '#FEF7AE'
             correctWord[i].classList.add('active')
             //keep this because it is what our check for winner function is checking for
@@ -184,6 +185,7 @@ playAgain.addEventListener('click', () => {
 })
 tryAgain.addEventListener('click', () => {
     alreadyGuessedLetterModal.style.display = 'none'
+    modalBackground.style.display = 'none'
 
 })
 
@@ -198,6 +200,7 @@ function displayWinningModal(){
 }
 function displayAlreadyGuessedModal(){
     alreadyGuessedLetterModal.style.display = 'flex'
+    modalBackground.style.display = 'flex'
     jurassicParkSound.play()
 }
 

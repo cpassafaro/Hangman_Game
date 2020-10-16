@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
 
+/*Animations gotten from css-tricks website*/
+
 *{
     box-sizing: border-box;
 }
@@ -92,7 +94,8 @@ h1{
 img{
     height:400px;
     position: relative;
-
+    transition: width 2s;
+    transition-timing-function: ease-in;
 }
 
 .hangman-image-container{
@@ -200,7 +203,6 @@ li{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding: 10px 10px 10px 10px; */
 }
 
 .la{
@@ -293,7 +295,6 @@ li{
     color:#F4E633;
     font-size: 30px;
     margin-bottom:-13px;
-
 }
 .you-win{
     padding-bottom:30px;
