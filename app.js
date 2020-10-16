@@ -16,6 +16,15 @@ let playAgain = document.querySelector('.play-again')
 let alreadyGuessedLetterModal = document.querySelector('.already-guessed')
 let tryAgain = document.querySelector('.try-again')
 let hint = document.querySelector('.hint')
+let rejectedAlarm = document.querySelector('.rejected')
+let jurassicParkSound = document.querySelector('.jurassic-park-sound')
+//has to be on audio container not the source
+let swishAudio = document.querySelector('.swish-audio')
+let gameOver = document.querySelector('.game-over')
+let winnerSound = document.querySelector('.winner-sound')
+let giveUpButton = document.querySelector('.give-up')
+
+
 
 //counter for the rejected letters
 let counter =0;
@@ -25,13 +34,14 @@ let currentLetter = '';
 
 //create the word that the person is guessing
 let wordBank = ['FLAPJACK', 'FUZZIEST', 'JOYFULLY', 'ZUCCHINI', 'CARJACKS', 'SIZZLERS', 'SNAZZIER', 'BACKFLIP', 'VOLUMIZE', 'GLOVEBOX', 'JAGGEDLY', 'QUICKEST', 'QUENCHED']
+
 //empty array that the getRandomWord function is going to push into
 let randomWord = []
 submitButton.addEventListener('click', (e)=>{
     e.preventDefault()
     getInput()
     //delayed check for winner so that the last letter can populate first
-    setTimeout(checkForWinner, 1000)
+    setTimeout(checkForWinner, 0500)
     input.focus()
     //reset current letter to empty each time
     currentLetter = ""
@@ -53,11 +63,14 @@ function getInput(){
 //create a function that is populating the rejected letter box
 function letterRejected(){
     //write a loop to see if there is already a letter in each spot and put it in next available spot
-    if(counter > 6){
+    if(counter > 5){
+        //adds audio
+        gameOver.play()
         displayLosingModal()
     }else{
         for(let i = 0; i<discardedLettersArea.length; i++){
             if(discardedLettersArea[i].textContent == ""){
+                swishAudio.play()
                 discardedLettersArea[i].textContent = currentLetter;
                 lettersAlreadyGuessed.push(currentLetter)
                 counter ++
@@ -69,21 +82,20 @@ function letterRejected(){
 
 //create function that populates the wordBank into the 
 function takeWordBank(){
-    // console.log('here')
-    // let letterGuessed = getInput()
     let thisCounter = 0;
     for(let i =0; i<correctWord.length; i++){
         if(currentLetter == correctWord[i].textContent){
+            rejectedAlarm.play()
             correctWord[i].style.color = '#FEF7AE'
+            correctWord[i].classList.add('active')
+            //keep this because it is what our check for winner function is checking for
             correctWord[i].style.display = 'flex'
         }else if(currentLetter == lettersAlreadyGuessed[i]){
-            // alert('You already guessed that!')
             displayAlreadyGuessedModal()
         }
         else{
             thisCounter ++
         }
-
     }
     if(thisCounter >7){
         letterRejected()
@@ -99,7 +111,7 @@ function checkForWinner(){
         }
     })
     if(winnerCounter > 7){
-        // alert('YOU WIN! PRESS NEW GAME TO PLAY AGAIN!')
+        winnerSound.play()
         displayWinningModal()
     }
 }
@@ -161,12 +173,11 @@ function displayLosingModal(){
 }
 
 
-//exit functionality
+//exit event listeners for the three different modals
 exit.addEventListener('click', () =>{
     goAwayModal()
     location.reload()
 })
-
 playAgain.addEventListener('click', () => {
     goAwayModal()
     location.reload()
@@ -187,23 +198,40 @@ function displayWinningModal(){
 }
 function displayAlreadyGuessedModal(){
     alreadyGuessedLetterModal.style.display = 'flex'
+    jurassicParkSound.play()
 }
+
+function giveUp(){
+    correctWord.forEach(element => {
+        element.style.display = 'flex'
+        element.style.color = '#FEF7AE'
+        element.classList.add('active')
+    })
+}
+
+giveUpButton.addEventListener('click', () => {
+    giveUp
+    gameOver.play()
+    displayLosingModal()
+})
+
+
+hint.addEventListener('click', () =>{
+    giveALetter()
+    checkForWinner()
+    hint.style.display = 'none'
+})
+
+
 
 function giveALetter(){
     for(let i =0; i<correctWord.length; i++){
-        if(correctWord[i].textContent == ''){
-            console.log('hey')
-            correctWord[i].style.color = '#FEF7AE'
-            correctWord[i].style.display = 'flex'
-            break
+        if(!correctWord[i].classList.contains('active')){
+            return correctWord[i].style.color = '#FEF7AE', correctWord[i].classList.add('active'), correctWord[i].style.display = 'flex'
         }
-        break
     }
 }
-hint.addEventListener('click', () =>{
-    giveALetter()
-    hint.style.display = 'none'
-})
+
 
 
 

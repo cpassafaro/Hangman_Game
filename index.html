@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <audio controls= 'controls' class ="swish-audio" >
+        <source src = 'Sounds/zapsplat_cartoon_swipe_fast_swish_001_49164.mp3' type = "audio/mpeg"/>
+    </audio>
+    <audio controls = 'controls' class ="rejected">
+        <source src = "Sounds/multimedia_game_sound_synth_tone_bold_error_52992.mp3" type = 'audio/mpeg'/>
+    </audio>
+    <audio controls = 'controls' class = "jurassic-park-sound">
+        <source src = "Sounds/dennis_nedry_ahahah.mp3" type = 'audio/mpeg'/>
+    </audio>
+    <audio controls = 'controls' class = 'game-over'>
+        <source src = 'Sounds/gameover.mp3' type ='audio/mpeg'/>
+    </audio>
+    <audio controls = 'controls' class = 'winner-sound'>
+        <source src = 'Sounds/aaj_0163_SmllCrwdClppng1.mp3' type ='audio/mpeg'/>
+    </audio>
     <h1>Weclome to Hangman</h1>
     <div class = 'hangman-main-container'>
         
@@ -55,15 +70,14 @@
     <div class = "new-game">
         <button class = "new-game-button">New Game</button>
         <button class = "hint new-game-button">Hint</button>
+        <button class = "give-up new-game-button">Give Up</button>
     </div>
     <div class = "modal" id= "you-lose">
-        <!-- <div class = 'modal-container'> -->
             <p class = "you-lose">YOU LOSE!</p> 
             <p class = "you-lose">The word was:</p>
             <p class = "you-lose winningWord"></p>
             <p class = "losing word"></p>
             <button class ="exit">Try Again</button>
-        <!-- </div> -->
     </div>
     <div class ="modal-overlay" id="modal-overlay"></div>
     <div class = "modal" id= "you-win">

@@ -317,3 +317,25 @@ li{
 .jpgbutton{
     width:100px;
 }
+
+.swish-audio{
+    display:none;
+}
+
+.rejected{
+    display:none;
+}
+.jurassic-park-sound{
+    display:none;
+}
+.game-over{
+    display: none;
+}
+.winner-sound{
+    display:none;
+}
+
+
+
+
+
