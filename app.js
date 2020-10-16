@@ -15,6 +15,7 @@ let winningModal = document.querySelector('#you-win')
 let playAgain = document.querySelector('.play-again')
 let alreadyGuessedLetterModal = document.querySelector('.already-guessed')
 let tryAgain = document.querySelector('.try-again')
+let hint = document.querySelector('.hint')
 
 //counter for the rejected letters
 let counter =0;
@@ -188,6 +189,21 @@ function displayAlreadyGuessedModal(){
     alreadyGuessedLetterModal.style.display = 'flex'
 }
 
+function giveALetter(){
+    for(let i =0; i<correctWord.length; i++){
+        if(correctWord[i].textContent == ''){
+            console.log('hey')
+            correctWord[i].style.color = '#FEF7AE'
+            correctWord[i].style.display = 'flex'
+            break
+        }
+        break
+    }
+}
+hint.addEventListener('click', () =>{
+    giveALetter()
+    hint.style.display = 'none'
+})
 
 
 
