@@ -1,4 +1,5 @@
-__HangMan Game__
+## HangMan Game
+____________________
 
 __Deployed Link__
 https://cpassafaro.github.io/Hangman_Game/
