@@ -1,6 +1,14 @@
------HangMan Game-------
+__HangMan Game__
 
-----Description------
+__Deployed Link__
+https://cpassafaro.github.io/Hangman_Game/
+
+__Sample__
+***
+![Home Page](images/sample.png)
+
+__Description__
+
 This is a mock-up of a traditional hangman game. The game is set up to only play eight letter words. The player gets eight guesses until they lose the game. There is a collection of words that are chosen from in the javascript file. One could change the array of words to take away or add more words to the discoverable options. Players can input one letter at a time into the submission box. They can click or hit enter to submit their letter. Once their letter is submitted it is evaluated as either a correct letter or an incorrect letter. 
 
 The letter box that stores discarded letters is being populated as the player guesses incorrectly. However the area where the correct letters are stored. The correct letters are already there at startup and are being revealed if the player guesses them correctly.
@@ -11,5 +19,5 @@ If the letter is correct the letter will be added to its place in the word above
 
 For troubleshooting purposes the correct word prints to the console upon statedup so that if you are just trying to see the funcitonality of the game you can use it as a reference.
 
----Languages used----
+__Languages used__
 HTML, CSS, JAVASCRIPT
